@@ -678,7 +678,6 @@
                 obstacles.push(house);
             });
 
-            // 3D Thar Model Loading Function Call
             createMahindraThar(18, -6);
             createMahindraThar(-18, 6);
         }
@@ -689,16 +688,15 @@
         function createMahindraThar(x, z) {
             const loader = new THREE.GLTFLoader();
             
-            // 👇 APNI MODEL FILE KA PATH YAHAN REPLACE KAREIN (Jaise: 'models/thar.glb') 👇
+            // ✅ Yahan error theek kar di gayi hai:
             const modelPath = 'thar_4x4.glb'; 
 
             loader.load(modelPath, function (gltf) {
                 const tharGroup = gltf.scene;
                 
-                tharGroup.scale.set(1, 1, 1); // Model size adjust karne ke liye
+                tharGroup.scale.set(1, 1, 1); 
                 tharGroup.position.set(x, 0, z);
                 
-                // Collision aur bounding box ke liye data
                 tharGroup.userData = { width: 2.0, depth: 3.6 };
                 
                 scene.add(tharGroup);
