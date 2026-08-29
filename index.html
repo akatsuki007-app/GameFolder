@@ -693,12 +693,15 @@
                 const tharGroup = gltf.scene;
                 
                 // Thar ko character se thodi badi size dene ke liye scale ko chota kiya hai
-                tharGroup.scale.set(0.35, 0.35, 0.35); 
+            // tharGroup.scale.set(0.35, 0.35, 0.35); 
+               tharGroup.scale.set(0.12, 0.12, 0.12); 
+        
                 tharGroup.position.set(x, 0, z);
                 
                 // Collision box bhi size ke hisaab se chota kar diya hai
-                tharGroup.userData = { width: 1.0, depth: 1.8 };
-                
+                //tharGroup.userData = { width: 1.0, depth: 1.8 };
+                tharGroup.userData = { width: 0.5, depth: 1.0 };
+        
                 scene.add(tharGroup);
                 obstacles.push(tharGroup);
                 cars.push(tharGroup);
